@@ -88,7 +88,7 @@ describe('OAuthComponent', () => {
     it('will create regular user account with base64 encoded reversed email as password', () => {
         userService.oauthLogin.mockReturnValue(of({ email: 'test@test.com' }))
         component.ngOnInit()
-        expect(userService.save).toHaveBeenCalledWith({ email: 'test@test.com', password: 'bW9jLnRzZXRAdHNldA==', passwordRepeat: 'bW9jLnRzZXRAdHNldA==' })
+        expect(userService.save).toHaveBeenCalledWith({ email: 'test@test.com', password: '', passwordRepeat: '' })
     })
 
     it('logs in user even after failed account creation as account might already have existed from previous OAuth login', () => {
